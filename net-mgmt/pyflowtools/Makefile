@@ -7,6 +7,7 @@
 
 PORTNAME=	pyflowtools
 PORTVERSION=	0.3.4.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	hizel@vyborg.ru
@@ -19,7 +20,7 @@ GH_PROJECT=	py-flowtools
 BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:${PORTSDIR}/net-mgmt/flow-tools-ng
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -fPIC
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USES=	python
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
