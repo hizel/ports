@@ -1,6 +1,6 @@
---- src/flow-fanout.c.orig	2008-01-28 05:48:55.000000000 +0900
-+++ src/flow-fanout.c	2008-08-02 02:18:10.000000000 +0900
-@@ -854,6 +854,7 @@
+--- src/flow-fanout.c.orig	2010-02-25 13:39:45 UTC
++++ src/flow-fanout.c
+@@ -871,6 +871,7 @@ retry:
      } /* if FD_ISSET */
  
  skip1:

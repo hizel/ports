@@ -1,5 +1,5 @@
---- lib/support.c.orig	2008-02-21 11:31:42.000000000 +0900
-+++ lib/support.c	2008-08-02 02:18:10.000000000 +0900
+--- lib/support.c.orig	2010-02-25 13:39:45 UTC
++++ lib/support.c
 @@ -44,6 +44,7 @@
  #include <stdio.h>
  #include <stdlib.h>

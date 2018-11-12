@@ -1,0 +1,11 @@
+--- configs/Makefile.am.orig	2018-11-12 23:02:08 UTC
++++ configs/Makefile.am
+@@ -1,6 +1,6 @@
+-ftsymdir=$(sysconfdir)/sym
++ftsymdir=$(sysconfdir)/flow-tools
+ dist_ftsym_DATA = ip-prot.sym ip-type.sym tcp-port.sym asn.sym tag.sym
+ 
+-ftcfgdir=$(sysconfdir)/cfg
++ftcfgdir=$(sysconfdir)/flow-tools
+ dist_ftcfg_DATA = map.cfg tag.cfg filter.cfg stat.cfg mask.cfg xlate.cfg
+ 

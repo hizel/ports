@@ -1,5 +1,5 @@
---- lib/ftpaths.c.orig	2008-08-02 02:19:52.000000000 +0900
-+++ lib/ftpaths.c	2008-08-02 02:20:47.000000000 +0900
+--- lib/ftpaths.c.orig	2010-02-25 13:39:45 UTC
++++ lib/ftpaths.c
 @@ -1,18 +1,18 @@
  #include <ftlib.h>
  

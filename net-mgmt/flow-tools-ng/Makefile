@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	flow-tools
-PORTVERSION=	0.68.5.1
-PORTREVISION=	1
+PORTVERSION=	0.68.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-ng
 
-MAINTAINER=	c.kworr@gmail.com
+MAINTAINER=	hizel@vyborg.ru
 COMMENT=	Suite of tools and library to work with netflow data
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		Unfetchable (google code has gone away)
-DEPRECATED=	Unfetchable for more than six months (google code has gone away)
-EXPIRATION_DATE=	2017-04-30
+USES=		gmake libtool python:run tar:bzip2 autoreconf
+USE_GITHUB=	yes
+GH_ACCOUNT=	hizel
+GH_PROJECT=	flow-tools-ng
 
 OPTIONS_DEFINE=	MYSQL OPENSSL PGSQL
 PGSQL_CONFIGURE_OFF=	--without-postgresql
@@ -30,9 +30,9 @@ OPENSSL_USES=		ssl
 
 CONFLICTS=	flow-tools-[0-9]*
 
-USES=		gmake libtool python:run tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-docbook
 INSTALL_TARGET=	install-strip
 
 SUB_LIST=	FLOW_CAPTURE_SPOOL="${FLOW_CAPTURE_SPOOL}" \
@@ -46,10 +46,6 @@ USERS=		flowtools
 GROUPS=		flowtools
 
 post-patch:
-	@${REINPLACE_CMD}\
-		-e 's|@sysconfdir@/sym/|${ETCDIR}/|' \
-		-e 's|@sysconfdir@/cfg/|${ETCDIR}/|' \
-	  ${WRKSRC}/docs/flow-*.1.in ${WRKSRC}/docs/flow-*.html.in
 	@${REINPLACE_CMD} -e 's|!/bin/env|!/usr/bin/env|' \
 		${WRKSRC}/bin/* ${WRKSRC}/utils/*
 
